@@ -9,17 +9,16 @@ phases:
   pre_build:
     commands:
       - "echo Logging in to Docker Hub..."
-      - "docker --version"
       - "docker login --username=\"saitejamalladi\" --password=\"Dream#1234\""
   build:
     commands:
       - "echo Build started on `date`"
       - "echo Building the Docker image..."
       - "mvn clean package -DskipTests=true"
-      - "docker --version"
-#      - "docker tag demo saitejamalladi/demo"
+      - "docker build -t demo ."
+      - "docker tag demo saitejamalladi/demo"
   post_build:
     commands:
       - "echo Build completed on `date`"
       - "echo Pushing the Docker image..."
-#      - "docker push saitejamalladi/demo"
+      - "docker push saitejamalladi/demo"
