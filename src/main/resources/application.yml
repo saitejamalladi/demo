@@ -1,0 +1,5 @@
+spring:
+  profiles:
+    active: default
+my-param1: Local_1
+my-param2: Local_2

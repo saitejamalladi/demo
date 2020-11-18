@@ -1,0 +1,5 @@
+spring:
+  profiles:
+    active: dev
+#my-param1: ${MY_PARAM1}
+#my-param2: ${MY_PARAM2}
