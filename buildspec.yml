@@ -1,11 +1,5 @@
 version: 0.1
 phases:
-  install:
-    commands:
-      - echo Entered the install phase...
-      - apt-get update -y
-      - apt-get install -y maven
-      - apt-get install -y docker.io
   pre_build:
     commands:
       - "echo Logging in to Docker Hub..."
@@ -15,6 +9,7 @@ phases:
       - "echo Build started on `date`"
       - "echo Building the Docker image..."
       - "mvn clean package -DskipTests=true"
+      - "docker --version"
       - "docker build -t demo ."
       - "docker tag demo saitejamalladi/demo"
   post_build:
@@ -22,3 +17,7 @@ phases:
       - "echo Build completed on `date`"
       - "echo Pushing the Docker image..."
       - "docker push saitejamalladi/demo"
+      - "Docker image pushed successfully"
+artifacts:
+  files:
+    - Dockerrun.aws.json
