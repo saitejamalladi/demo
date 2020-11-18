@@ -17,7 +17,7 @@ phases:
       - "echo Build completed on `date`"
       - "echo Pushing the Docker image..."
       - "docker push saitejamalladi/demo"
-      - "Docker image pushed successfully"
+      - echo "Docker image pushed successfully"
 artifacts:
   files:
     - Dockerrun.aws.json
