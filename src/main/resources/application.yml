@@ -2,6 +2,6 @@ spring:
   profiles:
     active: default
 server:
-  port: 8081
+  port: 8080
 my-param1: Local_1
 my-param2: Local_2
