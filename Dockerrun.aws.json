@@ -1,7 +1,7 @@
 {
   "AWSEBDockerrunVersion": "1",
   "Image": {
-    "Name": "saitejamalladi/demo_demo"
+    "Name": "saitejamalladi/demo"
   },
   "Ports": [
     {
