@@ -18,6 +18,9 @@ phases:
       - "echo Pushing the Docker image..."
       - "docker push saitejamalladi/demo"
       - echo "Docker image pushed successfully"
+      - envsubst < "Dockerrun.aws.json.template" > "Dockerrun.aws.json"
+      - echo "Dockerrun.aws.json.template transported successfully"
 artifacts:
   files:
-    - Dockerrun.aws.json
+    - 'Dockerrun.aws.json'
+    - '.ebextensions/**/*'
