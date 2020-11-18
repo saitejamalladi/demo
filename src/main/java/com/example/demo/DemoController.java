@@ -13,7 +13,7 @@ public class DemoController {
 
 	@RequestMapping(path="/", method = RequestMethod.GET)
 	public String welcome() {
-		return "Hello New World!!! ";
+		return "Hello Hello New World!!! ";
 	}
 
 	@RequestMapping(path="/config1", method = RequestMethod.GET)
