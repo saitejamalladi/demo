@@ -9,10 +9,10 @@ phases:
     commands:
       - "echo Build started on `date`"
       - "echo Building the Docker image..."
-      - "docker build -t saitejamalladi/demo_demo ."
-      - "docker tag saitejamalladi/demo_demo saitejamalladi/demo_demo:latest"
+      - "docker build -t demo ."
+      - "docker tag demo saitejamalladi/demo"
   post_build:
     commands:
       - "echo Build completed on `date`"
       - "echo Pushing the Docker image..."
-      - "docker push saitejamalladi/demo_demo:latest"
+      - "docker push saitejamalladi/demo"
