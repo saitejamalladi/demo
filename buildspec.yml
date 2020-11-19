@@ -11,17 +11,13 @@ phases:
 #      - "mvn clean package -DskipTests=true"
       - "docker --version"
       - "echo Building the Docker image..."
-      - "docker build -f Dockerfile.custom -t demo ."
+#      - "docker build -f Dockerfile.custom -t demo ."
       - echo "Tagging the Docker image..."
-      - "docker tag demo saitejamalladi/demo"
+#      - "docker tag demo saitejamalladi/demo"
   post_build:
     commands:
       - "echo Build completed on `date`"
       - "echo Pushing the Docker image..."
-      - "docker push saitejamalladi/demo"
+#      - "docker push saitejamalladi/demo"
       - echo "Docker image pushed successfully"
-      - envsubst < "Dockerrun.aws.json.template" > "Dockerrun.aws.json"
-      - echo "Dockerrun.aws.json.template transported successfully"
-artifacts:
-  files:
-    -  '**/*'
+      - echo "Dockerrun.aws.json transported successfully"
