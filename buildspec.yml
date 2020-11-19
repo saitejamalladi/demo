@@ -8,9 +8,11 @@ phases:
     commands:
       - "echo Build started on `date`"
       - "echo Building the Docker image..."
-      - "mvn clean package -DskipTests=true"
+#      - "mvn clean package -DskipTests=true"
       - "docker --version"
+      - "echo Building the Docker image..."
       - "docker build -f Dockerfile.custom -t demo ."
+      - echo "Tagging the Docker image..."
       - "docker tag demo saitejamalladi/demo"
   post_build:
     commands:
@@ -23,4 +25,3 @@ phases:
 artifacts:
   files:
     - 'Dockerrun.aws.json'
-    - '.ebextensions/**/*'
