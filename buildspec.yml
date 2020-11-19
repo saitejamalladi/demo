@@ -24,4 +24,4 @@ phases:
       - echo "Dockerrun.aws.json.template transported successfully"
 artifacts:
   files:
-    - 'Dockerrun.aws.json'
+    -  '**/*'
